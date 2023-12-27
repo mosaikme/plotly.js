@@ -24,6 +24,14 @@ function dyFn(shape, xa, ya) {
     return d2l(shape.y1, ya) - d2l(shape.y0, ya);
 }
 
+function dxFnPCT(shape, xa) {
+    return d2l(shape.x1, xa) / d2l(shape.x0, xa);
+}
+
+function dyFnPCT(shape, xa, ya) {
+    return d2l(shape.y1, ya) / d2l(shape.y0, ya);
+}
+
 function widthFn(shape, xa) {
     return Math.abs(dxFn(shape, xa));
 }
@@ -62,9 +70,12 @@ module.exports = {
     slope: slopeFn,
     dx: dxFn,
     dy: dyFn,
+    dxPCT: dxFnPCT,
+    dyPCT: dyFnPCT,
     width: widthFn,
     height: heightFn,
     length: lengthFn,
     xcenter: xcenterFn,
     ycenter: ycenterFn,
+    
 };
